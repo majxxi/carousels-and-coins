@@ -9,7 +9,7 @@ function random(coins){
 }
 
 function Flipper(props) {
-  const [coin, setCoin] = useState(0);
+  const [coin, setCoin] = useState(null);
   const [headCount, setHeadCount] = useState(0);
   const [tailCount, setTailCount] = useState(0);
 
@@ -23,9 +23,10 @@ function Flipper(props) {
     };
   }
 
+  const showCoin = coin ? <Coin src={coin.src} alt={coin.side} /> : null;
   return (
     <div>
-      <Coin src={coin.src} alt={coin.side} />
+      {showCoin}
       <button className="flipButton" onClick={handleClick}>FLIP</button>
       <p>Out of {headCount + tailCount} flips, there have been {headCount} heads and {tailCount} tails.</p>
     </div>

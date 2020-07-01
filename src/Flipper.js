@@ -27,7 +27,7 @@ function Flipper(props) {
   return (
     <div>
       {showCoin}
-      <button className="flipButton" onClick={handleClick}>FLIP</button>
+      <button data-testid="button" className="flipButton" onClick={handleClick}>FLIP</button>
       <p>Out of {headCount + tailCount} flips, there have been {headCount} heads and {tailCount} tails.</p>
     </div>
   );
